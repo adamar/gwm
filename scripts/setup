@@ -31,5 +31,13 @@ else
 fi
 
 
-
+# Add GWM to Path
+#
+if grep -q "gwm added to path" ~/.bashrc
+then
+  echo "Already added to gwm to path"
+else
+  chmod u+x ~/.gwm/bin/gwm
+  echo 'PATH=$PATH:~/.gwm/bin #gwm added to path' >> ~/.bashrc
+fi
 
