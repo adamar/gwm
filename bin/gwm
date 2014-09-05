@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+source ~/.gwm/libs/funcs
+
+
+_menu $1 
+
+
+

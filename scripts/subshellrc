@@ -1,0 +1,32 @@
+
+
+DIR=`pwd`
+PS1='\[\e[31m\][GWM:$DIR]\[\e[m\]' 
+GOPATH="$DIR/_src"
+GWM=1 
+
+
+cd () {
+  builtin cd "$@"
+
+  CurrDir=`pwd`
+
+  readarray -t dirList < "$HOME/.gwm/state/paths.bash"
+
+  FOUND="0"
+
+  for val in ${dirList[@]}; do
+    if [[ $val == $CurrDir ]]; then
+      FOUND="1"
+    fi
+  done
+
+  if [[ $FOUND = "0" ]]; then
+    if [[ -n "GWM" ]]; then
+      
+      exit 0
+    fi
+  fi
+
+
+}

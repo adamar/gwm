@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+
+cd () {
+  builtin cd "$@"
+
+  CurrDir=`pwd`
+
+  readarray -t dirList < "$HOME/.gwm/state/paths.bash"
+
+  for val in ${dirList[@]}; do
+    if [[ $val == $CurrDir ]]; then
+      DIR="${PWD##/*/}"
+      bash --rcfile "$HOME/.gwm/scripts/subshellrc" -i
+    fi
+  done
+
+}
+
+
+
+

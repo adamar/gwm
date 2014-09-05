@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+
+
+####################
+# Common Functions #
+####################
+
+
+_menu() {
+
+  case "$1" in
+    -i|--init)
+      _init
+    ;;
+    -v|--version)
+      _version
+    ;;
+    -*|--*)
+      echo "Unknown option $1"
+    ;;
+    "")
+      _usage
+    ;;
+  esac
+
+}
+
+
+_usage() {
+  cat <<EOF
+  GWM is a tool for managing Go workspaces.
+
+  Usage:
+
+        gwm [flags]
+
+  The flags are:
+
+    --init      Initiliaze a new Go Workspace
+    --remove    Remove a workspace
+    --version   Print version number
+    --fix       Fix a workspace
+    --list      List all managed workspaces
+  
+EOF
+}
+
+
+
+_init() {
+
+  CURR=`pwd`
+  if [[ $(grep $CURR "$HOME/.gwm/state/paths.bash") ]]; then
+    echo "This appears to be a GWM managed directory already!"
+  else
+    echo $CURR >> "$HOME/.gwm/state/paths.bash"
+    echo $CURR
+    echo $HOME/.gwm
+    echo "Initialize a new Go Workspace"
+  fi
+
+}
+
+
+_version() {
+
+  echo "Version 0.1"
+
+}
+
+
+_goversion() {
+
+  version=$(go version)
+  regex="(go[0-9].[0-9].[0-9])"
+  if [[ $version =~ $regex ]]; then 
+    echo ${BASH_REMATCH[1]}
+  fi
+
+}
+
+
+_start() {
+
+  if [[ -z "$rvm_path" ]]; then
+
+    echo "blah"
+  fi
+
+}
+
+
+
+
+
+

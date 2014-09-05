@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+
+GIT=`which git`
+DIR="$HOME/.gwm"
+
+# Add .gwm dir
+#
+if [[ -d "${DIR}" && ! -L "${DIR}" ]] ; then
+    echo "Already installed!"
+else
+    cd $HOME
+    $GIT clone github.com/adamar/gwm
+    mv "$HOME/gwm" "$HOME/.gwm"
+    touch "$HOME/.gwm/state/paths.bash"
+fi
+
+
+# Create Paths file
+#
+touch "$HOME/.gwm/state/paths.bash"
+
+
+# Add line to profile
+#
+if grep -q "gwm installed" ~/.profile
+then
+    echo "Already added to .profile"
+else
+    echo 'source ~/.gwm/scripts/cd #gwm installed' >> ~/.profile`
+fi
+
+
+
+
