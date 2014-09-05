@@ -9,7 +9,7 @@ and feature packed please see https://github.com/moovweb/gvm
 Installation
 ----
 
-wget https://github.com/adamar/gwm/scripts/setup  
+wget https://raw.githubusercontent.com/adamar/gwm/master/scripts/setup   
 ./setup
 
 
