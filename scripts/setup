@@ -10,7 +10,7 @@ if [[ -d "${DIR}" && ! -L "${DIR}" ]] ; then
     echo "Already installed!"
 else
     cd $HOME
-    $GIT clone github.com/adamar/gwm
+    $GIT clone https://github.com/adamar/gwm.git
     mv "$HOME/gwm" "$HOME/.gwm"
     touch "$HOME/.gwm/state/paths.bash"
 fi
@@ -23,11 +23,11 @@ touch "$HOME/.gwm/state/paths.bash"
 
 # Add line to profile
 #
-if grep -q "gwm installed" ~/.profile
+if grep -q "gwm installed" ~/.bashrc
 then
-    echo "Already added to .profile"
+    echo "Already added to .bashrc"
 else
-    echo 'source ~/.gwm/scripts/cd #gwm installed' >> ~/.profile`
+    echo 'source ~/.gwm/scripts/cd #gwm installed' >> ~/.bashrc
 fi
 
 

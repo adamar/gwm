@@ -10,6 +10,7 @@ Installation
 ----
 
 wget https://raw.githubusercontent.com/adamar/gwm/master/scripts/setup   
+chmod u+x setup  
 ./setup
 
 
