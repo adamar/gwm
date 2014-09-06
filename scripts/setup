@@ -27,7 +27,7 @@ if grep -q "gwm installed" ~/.bashrc
 then
     echo "Already added to .bashrc"
 else
-    echo 'source ~/.gwm/scripts/cd #gwm installed' >> ~/.bashrc
+    echo 'source ~/.gwm/scripts/startsubshell #gwm installed' >> ~/.bashrc
 fi
 
 
@@ -40,4 +40,15 @@ else
   chmod u+x ~/.gwm/bin/gwm
   echo 'PATH=$PATH:~/.gwm/bin #gwm added to path' >> ~/.bashrc
 fi
+
+
+# Reload Bashrc
+#
+source ~/.bashrc
+
+
+# Touch paths file
+#
+touch ~/.gwm/state/paths.bash
+
 
