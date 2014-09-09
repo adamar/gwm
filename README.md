@@ -17,7 +17,7 @@ chmod u+x setup
 Dependencies
 ----
 * Git
-* Bash
+* Bash (Newer than v3.0)
 
 
 Usage
@@ -38,3 +38,4 @@ A: Not much, it drops you into a subshell with some localised environment variab
 
 Q: Where are packages put?  
 A: The GOPATH is set to _src in the workspace.
+
