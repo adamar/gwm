@@ -15,6 +15,18 @@ _menu() {
     -v|--version)
       _version
     ;;
+    -r|--remove)
+      echo "Sorry, not yet implemented"
+    ;;
+    -f|--fix)
+      echo "Sorry, not yet implemented"
+    ;;
+    -v|--list)
+      echo "Sorry, not yet implemented"
+    ;;
+    -h|--help)
+      _usage
+    ;;
     -*|--*)
       echo "Unknown option $1"
     ;;
@@ -41,6 +53,7 @@ _usage() {
     --version   Print version number
     --fix       Fix a workspace
     --list      List all managed workspaces
+    --help      This listing
   
 EOF
 }

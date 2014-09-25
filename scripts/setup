@@ -9,6 +9,7 @@ DIR="${HOME}/.gwm"
 if [[ -d "${DIR}" && ! -L "${DIR}" ]] ; then
     echo "Already installed!"
 else
+    echo "Fetching latest version of GWM"
     cd $HOME
     $GIT clone https://github.com/adamar/gwm.git
     mv "${HOME}/gwm" "${HOME}/.gwm"
@@ -27,6 +28,7 @@ if grep -q "gwm installed" "${HOME}/.bashrc"
 then
     echo "Already added to .bashrc"
 else
+    echo "Adding startup script to BashRC"
     echo "source ${HOME}/.gwm/scripts/startsubshell #gwm installed" >> "${HOME}/.bashrc"
 fi
 
@@ -42,14 +44,14 @@ else
 fi
 
 
-# Reload Bashrc
-#
-source "${HOME}/.bashrc"
+cat <<EOF
 
+  Thank you for trying GWM
 
-# Touch paths file
-#
-touch "${HOME}/.gwm/state/paths.bash"
+  Please run the following line to finish the installation:
+     source $HOME/.bashrc
 
-
-
+  You can see all the GWM command line options by running the following command:
+     gwm --usage
+  
+EOF
