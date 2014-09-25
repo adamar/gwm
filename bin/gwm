@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.gwm/libs/funcs
+source "${HOME}/.gwm/libs/funcs"
 
 
 _menu $1 
