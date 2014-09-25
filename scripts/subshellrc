@@ -10,10 +10,13 @@ cd () {
   builtin cd "$@"
 
   CurrDir=`pwd`
-
-  readarray -t dirList < "$HOME/.gwm/state/paths.bash"
-
+  readarray -t dirList < "${HOME}/.gwm/state/paths.bash"
   FOUND="0"
+
+
+  # Go Values
+  export GOPATH=$GOPATH
+
 
   for val in ${dirList[@]}; do
     if [[ $val == $CurrDir ]]; then
@@ -22,8 +25,7 @@ cd () {
   done
 
   if [[ $FOUND = "0" ]]; then
-    if [[ -n "GWM" ]]; then
-      
+    if [[ -n "GWM" ]]; then    
       exit 0
     fi
   fi
