@@ -11,7 +11,7 @@ cd () {
   for val in ${dirList[@]}; do
     if [[ $val == $CurrDir ]]; then
       DIR="${PWD##/*/}"
-      bash --rcfile "$HOME/.gwm/scripts/subshellrc" -i
+      bash --rcfile "$HOME/.gwm/scripts/subshellrc" -i && { cd "../" ;}
     fi
   done
 
