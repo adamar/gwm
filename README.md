@@ -9,9 +9,12 @@ and feature packed please see https://github.com/moovweb/gvm
 Installation
 ----
 
+```sh
 wget https://raw.githubusercontent.com/adamar/gwm/master/scripts/setup   
+{Read the setup script before running}
 chmod u+x setup  
 ./setup
+```
 
 
 Dependencies
