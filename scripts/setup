@@ -52,6 +52,6 @@ cat <<EOF
      source $HOME/.bashrc
 
   You can see all the GWM command line options by running the following command:
-     gwm --usage
+     gwm --help
   
 EOF

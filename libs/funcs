@@ -48,7 +48,7 @@ _usage() {
 
   The flags are:
 
-    --init      Initiliaze a new Go Workspace
+    --init      Initialize a new Go Workspace
     --remove    Remove a workspace
     --version   Print version number
     --fix       Fix a workspace
