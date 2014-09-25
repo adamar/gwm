@@ -2,7 +2,7 @@
 
 
 GIT=`which git`
-DIR="$HOME/.gwm"
+DIR="${HOME}/.gwm"
 
 # Add .gwm dir
 #
@@ -11,44 +11,45 @@ if [[ -d "${DIR}" && ! -L "${DIR}" ]] ; then
 else
     cd $HOME
     $GIT clone https://github.com/adamar/gwm.git
-    mv "$HOME/gwm" "$HOME/.gwm"
-    touch "$HOME/.gwm/state/paths.bash"
+    mv "${HOME}/gwm" "${HOME}/.gwm"
+    touch "${HOME}/.gwm/state/paths.bash"
 fi
 
 
 # Create Paths file
 #
-touch "$HOME/.gwm/state/paths.bash"
+touch "${HOME}/.gwm/state/paths.bash"
 
 
 # Add line to profile
 #
-if grep -q "gwm installed" ~/.bashrc
+if grep -q "gwm installed" "${HOME}/.bashrc"
 then
     echo "Already added to .bashrc"
 else
-    echo 'source ~/.gwm/scripts/startsubshell #gwm installed' >> ~/.bashrc
+    echo "source ${HOME}/.gwm/scripts/startsubshell #gwm installed" >> "${HOME}/.bashrc"
 fi
 
 
 # Add GWM to Path
 #
-if grep -q "gwm added to path" ~/.bashrc
+if grep -q "gwm added to path" "${HOME}/.bashrc"
 then
   echo "Already added to gwm to path"
 else
-  chmod u+x ~/.gwm/bin/gwm
-  echo 'PATH=$PATH:~/.gwm/bin #gwm added to path' >> ~/.bashrc
+  chmod u+x "${HOME}/.gwm/bin/gwm"
+  echo "PATH=${PATH}:${HOME}/.gwm/bin #gwm added to path" >> "${HOME}/.bashrc
 fi
 
 
 # Reload Bashrc
 #
-source ~/.bashrc
+source "${HOME}/.bashrc"
 
 
 # Touch paths file
 #
-touch ~/.gwm/state/paths.bash
+touch "${HOME}/.gwm/state/paths.bash"
+
 
 
