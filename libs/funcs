@@ -56,6 +56,7 @@ _init() {
     echo $CURR >> "$HOME/.gwm/state/paths.bash"
     echo $CURR
     echo $HOME/.gwm
+    mkdir "_src"
     echo "Initialize a new Go Workspace"
   fi
 
@@ -88,6 +89,7 @@ _start() {
   fi
 
 }
+
 
 
 
