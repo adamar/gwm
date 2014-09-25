@@ -38,7 +38,7 @@ then
   echo "Already added to gwm to path"
 else
   chmod u+x "${HOME}/.gwm/bin/gwm"
-  echo "PATH=${PATH}:${HOME}/.gwm/bin #gwm added to path" >> "${HOME}/.bashrc
+  echo "PATH=${PATH}:${HOME}/.gwm/bin #gwm added to path" >> "${HOME}/.bashrc"
 fi
 
 
