@@ -16,13 +16,13 @@ _menu() {
       _version
     ;;
     -r|--remove)
-      echo "Sorry, not yet implemented"
+      _remove
     ;;
     -f|--fix)
-      echo "Sorry, not yet implemented"
+      _fix
     ;;
     -v|--list)
-      echo "Sorry, not yet implemented"
+      _list
     ;;
     -h|--help)
       _usage
@@ -105,7 +105,23 @@ _start() {
 
 
 
+_remove() {
+
+  echo "Sorry, not yet implemented"
+
+}
 
 
+_fix() {
 
+  echo "Sorry, not yet implemented"
+
+}
+
+
+_list() {
+
+  echo "Sorry, not yet implemented"
+
+}
 
