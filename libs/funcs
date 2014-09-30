@@ -115,8 +115,10 @@ _start() {
 
 _remove() {
 
-  CURR=`pwd`  
-  sed --in-place '/$CURR/d' "$HOME/.gwm/state/paths.bash"
+  CURR=`pwd`
+  msg "Removing $CURR"
+  sed -in-place '\|'$CURR'|g' "$HOME/.gwm/state/paths.bash"
+  sed --in-place '/^\s*$/d' "$HOME/.gwm/state/paths.bash" 
 
 }
 
