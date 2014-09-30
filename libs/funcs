@@ -130,7 +130,13 @@ _fix() {
 
 _list() {
 
-  error "Sorry, not yet implemented"
+  while read line; do
+    if [ -z "$line" ]; then
+      error "Error, problem in paths"
+    else
+      msg "$line"  
+    fi
+  done < "$HOME/.gwm/state/paths.bash"
 
 }
 
