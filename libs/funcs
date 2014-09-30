@@ -73,13 +73,13 @@ _init() {
 
   CURR=`pwd`
   if [[ $(grep $CURR "$HOME/.gwm/state/paths.bash") ]]; then
-    echo "This appears to be a GWM managed directory already!"
+    error "This appears to be a GWM managed directory already!"
   else
     echo $CURR >> "$HOME/.gwm/state/paths.bash"
     echo $CURR
     echo $HOME/.gwm
     mkdir "_src"
-    echo "Initialize a new Go Workspace"
+    msg "Initialize a new Go Workspace"
   fi
 
 }
@@ -87,7 +87,7 @@ _init() {
 
 _version() {
 
-  echo "Version 0.1"
+  msg "Version 0.1"
 
 }
 
@@ -97,7 +97,7 @@ _goversion() {
   version=$(go version)
   regex="(go[0-9].[0-9].[0-9])"
   if [[ $version =~ $regex ]]; then 
-    echo ${BASH_REMATCH[1]}
+    msg ${BASH_REMATCH[1]}
   fi
 
 }
@@ -106,8 +106,7 @@ _goversion() {
 _start() {
 
   if [[ -z "$rvm_path" ]]; then
-
-    echo "blah"
+    error "Not properly tested alongside RVM"
   fi
 
 }
@@ -116,21 +115,21 @@ _start() {
 
 _remove() {
 
-  echo "Sorry, not yet implemented"
+  error "Sorry, not yet implemented"
 
 }
 
 
 _fix() {
 
-  echo "Sorry, not yet implemented"
+  error "Sorry, not yet implemented"
 
 }
 
 
 _list() {
 
-  echo "Sorry, not yet implemented"
+  error "Sorry, not yet implemented"
 
 }
 
