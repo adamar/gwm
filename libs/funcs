@@ -49,7 +49,7 @@ _usage() {
   The flags are:
 
     --init      Initialize a new Go Workspace
-    --remove    Remove a workspace
+    --remove    Remove the current workspace
     --version   Print version number
     --fix       Fix a workspace
     --list      List all managed workspaces
@@ -115,7 +115,8 @@ _start() {
 
 _remove() {
 
-  error "Sorry, not yet implemented"
+  CURR=`pwd`  
+  sed --in-place '/$CURR/d' "$HOME/.gwm/state/paths.bash"
 
 }
 
